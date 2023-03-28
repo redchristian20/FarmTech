@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Farm Tech</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">Click to login</string>
+    <string name="click_to_register">Click to register</string>
+    <string name="logout">Logout</string>
+    <string name="user">User</string>
+    <string name="welcome">Welcome:</string>
+    <string name="identify_crop">Identify Crop</string>
+    <string name="schedule_harvest">Schedule Harvest</string>
+    <string name="crop_information">Crop Information</string>
+    <string name="crop_information_description">Here you will find various must-to-know information about crops grown in Benguet</string>
+    <string name="crop_name">Crop Name:</string>
+    <string name="crop_name_hint">Crop Name</string>
+    <string name="crop_description">Crop Description</string>
+    <string name="crop_description_hint">Crop Description</string>
+    <string name="common_diseases_hint">Common Diseases</string>
+    <string name="harvest_period">Harvest Period:</string>
+    <string name="common_diseases">Common Diseases:</string>
+    <string name="harvest_period_hint">harvest_period</string>
+    <string name="more_info">More Info</string>
+    <string name="harvest_plans">Harvest Plans</string>
+    <string name="identify_crop_disease">Identify Crop Disease</string>
+</resources>
