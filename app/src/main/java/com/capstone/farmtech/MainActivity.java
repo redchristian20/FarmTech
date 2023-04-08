@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Going to home page
+        Intent i = new Intent(MainActivity.this,IndexActivity.class);
+        startActivity(i);
 
     }
 }
