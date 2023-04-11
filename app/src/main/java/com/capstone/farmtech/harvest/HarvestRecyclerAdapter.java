@@ -132,8 +132,8 @@ public class HarvestRecyclerAdapter extends RecyclerView.Adapter<HarvestRecycler
                         if (newTitle.equals(harvestTitle) && newCrop.equals(harvestCrop) && newDuration.equals(harvestDuration)) {
                             Toast.makeText(context, "you don't change anything", Toast.LENGTH_SHORT).show();
                         } else {
-                            databaseReference.child("USERS").child(id).setValue(new HarvestItem(id, newTitle, newCrop, newDuration));
-                            Toast.makeText(context, "User Updated successfully!", Toast.LENGTH_SHORT).show();
+                            databaseReference.child("Harvests").child(id).setValue(new HarvestItem(id, newTitle, newCrop, newDuration));
+                            Toast.makeText(context, "Schedule Updated successfully!", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         }
 
