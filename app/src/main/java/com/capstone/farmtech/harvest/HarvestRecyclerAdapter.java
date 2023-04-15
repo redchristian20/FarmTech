@@ -53,7 +53,8 @@ public class HarvestRecyclerAdapter extends RecyclerView.Adapter<HarvestRecycler
             @Override
             public void onClick(View view) {
                 ViewDialogUpdate viewDialogUpdate = new ViewDialogUpdate();
-                viewDialogUpdate.showDialog(context, harvests.getId(),harvests.getHarvestTitle(), harvests.getHarvestDuration(), harvests.getHarvestCrop());
+                viewDialogUpdate.showDialog(context, harvests.getId(),harvests.getHarvestTitle(),
+                        harvests.getHarvestDuration(), harvests.getHarvestCrop());
             }
         });
 

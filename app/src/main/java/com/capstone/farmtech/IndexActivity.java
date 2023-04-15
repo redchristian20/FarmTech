@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.capstone.farmtech.authentication.Login;
 import com.capstone.farmtech.crop_information.CropInformationActivity;
+import com.capstone.farmtech.harvest.CreateHarvestPlanActivity;
 import com.capstone.farmtech.image_recognition.ImageRecognitionActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -17,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class IndexActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
-    Button button,buttonIdentifyCrop,buttonCropInformation;
+    Button buttonLogout,buttonIdentifyCrop,buttonCropInformation,buttonHarvestPlans;
     TextView textView;
     FirebaseUser user;
 
@@ -29,9 +30,10 @@ public class IndexActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
-        button = findViewById(R.id.btn_logout);
+        buttonLogout = findViewById(R.id.btn_logout);
         buttonIdentifyCrop = findViewById(R.id.btn_identify_crop);
         buttonCropInformation = findViewById(R.id.btn_crop_information);
+        buttonHarvestPlans = findViewById(R.id.btn_harvest_plans);
         textView = findViewById(R.id.user_details);
 
         if(user == null)
@@ -44,7 +46,7 @@ public class IndexActivity extends AppCompatActivity {
         {
             textView.setText(user.getEmail());
         }
-        button.setOnClickListener(new View.OnClickListener() {
+        buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
@@ -64,6 +66,13 @@ public class IndexActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CropInformationActivity.class);
+                startActivity(intent);
+            }
+        });
+        buttonHarvestPlans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CreateHarvestPlanActivity.class);
                 startActivity(intent);
             }
         });
