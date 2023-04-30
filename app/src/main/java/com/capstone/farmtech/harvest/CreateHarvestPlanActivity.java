@@ -38,15 +38,20 @@ public class CreateHarvestPlanActivity extends AppCompatActivity {
 
     Button buttonAdd;
 
+    public void onStart(){
+        super.onStart();
+        //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_harvest_plan);
 
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true); // work offline
-        Objects.requireNonNull(getSupportActionBar()).hide();
+
 
         databaseReference = FirebaseDatabase.getInstance("https://farm-tech-71468-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -68,7 +73,7 @@ public class CreateHarvestPlanActivity extends AppCompatActivity {
 
     private void readData() {
 
-        databaseReference.child("harvest_plans").orderByChild("userName")
+        databaseReference.child("harvest_plans").orderByChild("id")
                 .addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override

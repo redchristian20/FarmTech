@@ -59,7 +59,7 @@ public class ImageRecognitionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_recognition);
 
-        frame = findViewById(R.id.imageView);
+        frame = findViewById(R.id.crop_image);
         innerImage = findViewById(R.id.imageView2);
         resultTv = findViewById(R.id.textView);
 

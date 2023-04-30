@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/crop_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
@@ -22,10 +22,10 @@
         android:layout_height="0dp"
         android:layout_margin="25dp"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@id/imageView"
-        app:layout_constraintStart_toStartOf="@id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/crop_image"
+        app:layout_constraintEnd_toEndOf="@id/crop_image"
+        app:layout_constraintStart_toStartOf="@id/crop_image"
+        app:layout_constraintTop_toTopOf="@+id/crop_image"
         app:srcCompat="@drawable/ic_baseline_image_24" />
 
     <TextView
@@ -33,11 +33,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Results"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+        app:layout_constraintTop_toBottomOf="@id/crop_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

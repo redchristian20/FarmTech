@@ -30,7 +30,7 @@ public class HarvestRecyclerAdapter extends RecyclerView.Adapter<HarvestRecycler
     public HarvestRecyclerAdapter(Context context, ArrayList<HarvestItem> harvestItemArraylists){
         this.context = context;
         this.harvestItemArraylists = harvestItemArraylists;
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance("https://farm-tech-71468-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
     }
 
     @NonNull
@@ -133,7 +133,7 @@ public class HarvestRecyclerAdapter extends RecyclerView.Adapter<HarvestRecycler
                         if (newTitle.equals(harvestTitle) && newCrop.equals(harvestCrop) && newDuration.equals(harvestDuration)) {
                             Toast.makeText(context, "you don't change anything", Toast.LENGTH_SHORT).show();
                         } else {
-                            databaseReference.child("Harvests").child(id).setValue(new HarvestItem(id, newTitle, newCrop, newDuration));
+                            databaseReference.child("harvest_plans").child(id).setValue(new HarvestItem(id, newTitle, newCrop, newDuration));
                             Toast.makeText(context, "Schedule Updated successfully!", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         }
@@ -156,8 +156,8 @@ public class HarvestRecyclerAdapter extends RecyclerView.Adapter<HarvestRecycler
             dialog.setCancelable(false);
             dialog.setContentView(R.layout.view_dialog_confirm_delete);
 
-            Button buttonDelete = dialog.findViewById(R.id.buttonDelete);
-            Button buttonCancel = dialog.findViewById(R.id.buttonCancel);
+            Button buttonDelete = dialog.findViewById(R.id.button_delete);
+            Button buttonCancel = dialog.findViewById(R.id.button_cancel);
 
             buttonCancel.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -170,7 +170,7 @@ public class HarvestRecyclerAdapter extends RecyclerView.Adapter<HarvestRecycler
                 @Override
                 public void onClick(View view) {
 
-                    databaseReference.child("harvest_schedules").child(id).removeValue();
+                    databaseReference.child("harvest_plans").child(id).removeValue();
                     Toast.makeText(context, "User Deleted successfully!", Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
 

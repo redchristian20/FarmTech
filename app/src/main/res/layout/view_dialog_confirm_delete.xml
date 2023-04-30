@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bu"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:layoutDirection="ltr"
@@ -25,27 +26,18 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonDelete"
+        <Button
+            android:id="@+id/button_cancel"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15sp"
-            android:background="@android:color/holo_red_light"
-            android:text="Yes, Delete"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonCancel"
+        <Button
+            android:id="@+id/button_delete"
             android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_marginTop="5dp"
-            android:background="@android:color/holo_blue_dark"
-            android:text="No, Exit"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:text="Delete" />
+
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
