@@ -19,6 +19,7 @@ import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +51,8 @@ public class ImageRecognitionActivity extends AppCompatActivity {
     TextView resultTv;
     ImageLabeler labeler;
 
+    Button uploadImage;
+
     FirebaseAuth auth;
     FirebaseUser user;
 
@@ -59,11 +62,11 @@ public class ImageRecognitionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_recognition);
 
-        frame = findViewById(R.id.crop_image);
         innerImage = findViewById(R.id.imageView2);
         resultTv = findViewById(R.id.textView);
+        uploadImage = findViewById(R.id.button_upload_image);
 
-        frame.setOnClickListener(new View.OnClickListener() {
+        uploadImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
